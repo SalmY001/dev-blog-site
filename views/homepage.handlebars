@@ -1,1 +1,28 @@
 <h1>Homepage</h1>
+
+<div class="container mt-4">
+  <div class="d-flex justify-content-center align-items-center">
+    {{#each blogs as |blog| }}
+    <div class="col mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title text-primary"><a href="/blog/{{blog.dataValues.id}}">{{blog.dataValues.title}}</a></h2>
+          <p class="card-text">Created by {{blog.user.dataValues.username}} on {{format_date blog.dataValues.created_date}}</p>
+          <p class="card-text">{{blog.dataValues.contents}}</p>
+
+          {{#if blog.blog_comments.dataValues}}
+          <h3 class="card-title text-info">Comments</h3>
+          <!-- Loop over each comment in the blog_comments array -->
+          {{#each blog.blog_comments.dataValues as |comment|}}
+          <div class="comment">
+            <p>New Comment {{comment.user_id}}:</p>
+            <p>{{comment.comment_text}}</p>
+          </div>
+          {{/each}}
+          {{/if}}
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div> 

@@ -11,14 +11,14 @@ const signupHandler = async(e) => {
     console.log(lastName);
 
     if(username_signup && password_signup && firstName && lastName) {
-        const res = await fetch("/api/user", {
+        const res = await fetch("/api/user/signup", {
             method: "POST",
             body: JSON.stringify({ username_signup, password_signup, firstName, lastName }),
             headers: {"Content-Type": "application/json"},
         });
 
         if(res.ok) {
-            document.location.replace("/login")
+            document.location.replace("/dashboard")
         } else {
             alert(res.statusText);
         }

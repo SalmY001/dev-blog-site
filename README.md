@@ -13,7 +13,7 @@
 
 ## Description
 
-The project aims to create a web application for blog posts that can be used to write, save and display tech blogs. This application uses Handlebars.js as a templating language, Sequelize at the ORM and express-session npm package for authentication.
+The project aims to create a web application for blog posts that can be used to write, save and display tech blogs. This application uses Handlebars.js as a templating language, Sequelize as the ORM and express-session npm package for authentication.
 
 The project helps to develop skills in building a back-end and front-end application.
 

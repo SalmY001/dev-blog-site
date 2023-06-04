@@ -1,49 +1,24 @@
-{{!-- <!-- Loop over each object in the blog array -->
-{{#each blogs as |blog| }}
-<div class="row mb-4 project">
-  <div class="card col-md-5">
-    <h2>
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{{get_emoji}}}
-      <a href="/project/{{project.id}}">{{project.name}}</a>
-    </h2>
-    <p>
-      <span for="img" aria-label="money">💲</span>
-      <!-- Pass needed_funding value to the helper function -->
-      <span class="dollar-amount">{{format_amount project.needed_funding}}</span>
-      needed!
-    </p>
-    <p>Created by {{project.user.name}} on {{format_date project.date_created}}</p>
+<!--create form to submit blog post-->
+<h2 class="text-center">Dashboard</h2>
+<form class="dashboard-form">
+  <div class="container mb-2 col-10 col-md-6 col-lg-5 bg-dark text-light py-3 px-5 rounded">
+    <label class="form-label" for="blog">New Post</label>
+    <input id="blog-title" class="form-control" type="text" placeholder="Enter the title of your blog" aria-label="title" required autofocus>
+    <input id="blog-content" class="form-control" type="text" placeholder="Enter the contents of your blog" aria-label="contents" required autofocus>
+    <button class="btn btn-primary btn-block" type="sumbit">Submit Blog</button>
   </div>
-  <div class="col-md-7">
-    <p>
-      {{project.description}}
-    </p>
-  </div>
-</div>
-{{/each}} --}}
+</form>
 
-Loop over each blog in the blogs array
+<h3>Existing Blog Posts</h3>
 <div class="container mt-4">
   <div class="row row-cols-1 row-cols-md-2 g-4">
     {{#each blogs as |blog| }}
     <div class="col mb-4">
       <div class="card">
         <div class="card-body">
-          <h2 class="card-title text-primary"><a href="/blog/{{blog.dataValues.id}}">{{blog.dataValues.title}}</a></h2>
-          <p class="card-text">Created by {{blog.user.dataValues.username}} on {{format_date blog.dataValues.date_created}}</p>
-          <p class="card-text">{{blog.dataValues.content}}</p>
-
-          {{#if blog.user_comments.dataValues}}
-          <h3 class="card-title text-info">Comments</h3>
-          <!-- Loop over each comment in the blog_comments array -->
-          {{#each blog.user_comments.dataValues as |comment|}}
-          <div class="comment">
-            <p>Comment by User {{comment.user_id}}:</p>
-            <p>{{comment.user_comment_text}}</p>
-          </div>
-          {{/each}}
-          {{/if}}
+          <h4 class="card-title text-primary"><a href="/blog/{{blog.dataValues.id}}">{{blog.dataValues.title}}</a></h4>
+          <p class="card-text">Created by {{blog.user.dataValues.username}} on {{format_date blog.dataValues.created_date}}</p>
+          <p class="card-text">{{blog.dataValues.contents}}</p>
         </div>
       </div>
     </div>

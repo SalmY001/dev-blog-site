@@ -54,4 +54,15 @@ router.post("/logout", (req, res) => {
     }
 });
 
+router.post("/signup", (req, res) => {
+    if(!req.session.logged_in){
+        req.session.save(() => {
+            req.session.user_id = userData.id;
+            res.json({user: userData, message: "Successfully registered"})
+        });
+    } else {
+        res.status(404).end();
+    }
+});
+
 module.exports = router;

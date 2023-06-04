@@ -43,8 +43,6 @@ An example image of the login screen is displayed below.
 
 https://drive.google.com/file/d/1bnrZui_VGe8M5AYahGlN5h5flOOuEn8_/view?usp=drive_link
 
-The application is deployed in the link below.
-
 ## Contributors
 
 N/A

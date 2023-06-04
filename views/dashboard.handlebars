@@ -16,8 +16,8 @@
     <div class="col mb-4">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title text-primary"><a href="/blog/{{blog.dataValues.id}}">{{blog.dataValues.title}}</a></h4>
-          <p class="card-text">Created by {{blog.user.dataValues.username}} on {{format_date blog.dataValues.created_date}}</p>
+          <h4 class="card-title text"><a href="/blog/{{blog.dataValues.id}}">{{blog.dataValues.title}}</a></h4>
+          <p class="card-text">Authored by: {{blog.user.dataValues.username}} on {{format_date blog.dataValues.created_date}}</p>
           <p class="card-text">{{blog.dataValues.contents}}</p>
         </div>
       </div>

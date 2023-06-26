@@ -7,7 +7,7 @@ module.exports = {
   
     // The custom helper 'format_date' takes in a timestamp
     format_date: (date) => {
-      // We format month, date and year
+      // Format month, date and year
       const month = new Date(date).getMonth() +1;
       const day = new Date(date).getDate();
       const year = new Date(date).getFullYear();

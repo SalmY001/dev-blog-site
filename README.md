@@ -39,9 +39,11 @@ sequelize
 
 ## Usage
 
-An example image of the login screen is displayed below.
+An example image of the login screen is displayed below, along with the deployed application link to Heroku.
 
 https://drive.google.com/file/d/1wIQkCEcd1UX42djUP8Bs_CIp8JogUee5/view?usp=sharing
+
+https://dev-blog-site.herokuapp.com/login
 
 ## Contributors
 

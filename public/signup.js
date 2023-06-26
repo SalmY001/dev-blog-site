@@ -2,24 +2,24 @@
 const signupHandler = async(e) => {
     console.log(e);
     e.preventDefault();
-    const firstName = document.querySelector("#firstName").value.trim();
-    const lastName = document.querySelector("#lastName").value.trim();
+    const firstName = document.querySelector("#first_name").value.trim();
+    const lastName = document.querySelector("#last_name").value.trim();
     const username_signup = document.querySelector("#username_signup").value.trim();
     const password_signup = document.querySelector("#password_signup").value.trim();
-    console.log(firstName);
-    console.log(lastName);
+    console.log(first_name);
+    console.log(last_name);
     console.log(username_signup);
     console.log(password_signup);
 
     if(firstName && lastName && username_signup && password_signup) {
         const res = await fetch("/api/user", {
             method: "POST",
-            body: JSON.stringify({ username_signup, password_signup, firstName, lastName }),
+            body: JSON.stringify({ firstName, lastName, username_signup, password_signup }),
             headers: {"Content-Type": "application/json"},
         });
 
         if(res.ok) {
-            document.location.replace("/login")
+            document.location.replace("/")
         } else {
             alert(res.statusText);
         }

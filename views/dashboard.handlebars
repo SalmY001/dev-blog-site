@@ -9,20 +9,16 @@
   </div>
 </form>
 
+<div class="blog-post d-flex justify content-between">
 <h3>Existing Blog Posts</h3>
-<div class="container mt-4">
-  <div class="row row-cols-1 row-cols-md-2 g-4">
-    {{#each blogs as |blog| }}
-    <div class="col mb-4">
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title text"><a href="/blog/{{blog.dataValues.id}}">{{blog.dataValues.title}}</a></h4>
-          <p class="card-text">Authored by: {{blog.user.dataValues.username}} on {{format_date blog.dataValues.created_date}}</p>
-          <p class="card-text">{{blog.dataValues.contents}}</p>
-        </div>
-      </div>
-    </div>
-    {{/each}}
-  </div>
-</div> 
+{{#if blogs}}
+  {{#each blogs as |blog|}}
+  {{> blog}}
+  {{/each}}
+{{else}}
+<p>You have not written any blogs</p>
+{{/if}}
+</div>
+
+
 
